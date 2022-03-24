@@ -11,12 +11,8 @@
         file: './vars/{{ item }}'
       loop: '{{ vars_list }}'
     
-#    - name: 'Create VM Cluster Network and VM Cluster for ExaCC'
-#      include_role:
-#        name: 'exacc_vm_cluster'
-      
     - name: 'Create VM Cluster Network and VM Cluster for ExaCC'
       include_role:
-       name: 'exacc_infra'
+        name: 'exacc_vm_cluster'
     
     

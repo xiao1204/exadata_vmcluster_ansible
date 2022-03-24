@@ -1,6 +1,7 @@
 # GENERAL REQUIRED VARIABLES
-exadata_type: 'exacs'                 # exacs, exacc
+exadata_type: 'exacc'                 # exacs, exacc
 compartment_id: 'ocid...'
+infra_compartment_id: 'ocid...'
 workload_tag: 'tag1'
 
 # VM CLUSTER NETWORK REQUIRED VARIABLES

@@ -1,7 +1,7 @@
-- name: 'Discover ExaCC {{ workload_tag }}{{ exacc_name }}'
+- name: 'Discover ExaCC "{{ workload_tag }}{{ exacc_name }}"'
   oci_database_exadata_infrastructure_facts:
-    compartment_id: '{{ compartment_id }}'
-    display_name: '{{ workload_tag }}{{ exacc_name }}'
+    compartment_id: '{{ infra_compartment_id }}'
+    display_name: '{{ exacc_infra_name }}'
   register: 'exacc_discovery_result'
 - name: 'ExaCC Discovery Output'
   debug:

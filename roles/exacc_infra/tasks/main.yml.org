@@ -6,6 +6,5 @@
     that:
       - exadata_type is defined and exadata_type == 'exacc'
     fail_msg: 'Define variable exadata_type to be exacc.'
- 
-- name: Fetch ExaCC Infra
-  include_tasks: exacc_discovery.yml    
+  
+    
