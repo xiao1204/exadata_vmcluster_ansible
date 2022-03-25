@@ -18,13 +18,21 @@
       gateway: '{{ client_gateway }}'
       netmask: '{{ client_netmask }}'
       network_type: 'CLIENT'
-      nodes: '{{ client_nodes }}'
+      nodes:
+      - hostname: '{{ client_node_hostname }}'
+        ip: '{{ client_node_ip }}'
+        vip: '{{ client_node_vip }}'
+        vip_hostname: '{{ client_node_vip_hostname }}'
       vlan_id: '{{ client_vlan_id }}'
     - domain_name: '{{ backup_domain_name }}'
       gateway: '{{ backup_gateway }}'
       netmask: '{{ backup_netmask }}'
       network_type: 'BACKUP'
-      nodes: '{{ backup_nodes }}'
+      nodes:
+      - hostname: '{{ backup_node_hostname }}'
+        ip: '{{ backup_node_ip }}'
+        vip: '{{ backup_node_vip }}'
+        vip_hostname: '{{ backup_node_vip_hostname }}'
       vlan_id: '{{ backup_vlan_id }}'
 - debug:
     msg: '{{ vm_cluster_network_create_result }}'

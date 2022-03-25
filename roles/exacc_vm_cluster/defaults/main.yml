@@ -9,14 +9,18 @@ client_node_vip: null
 client_node_vip_hostname: null
 
 # vm cluster optional values
-vm_cluster_data_storage_size_in_tbs: '84'
-vm_cluster_db_node_storage_size_in_gbs: '60'
+vm_cluster_data_storage_size_in_tbs: '30'
+vm_cluster_db_node_storage_size_in_gbs: '400'
+vm_cluster_db_servers: [
+                "ocid1.dbserver.oc1.iad.anuwcljtcbtr6qqaczgvcnapj54ks2q4y5luiwmijspyp7wrtxq67bqg7pdq",
+                "ocid1.dbserver.oc1.iad.anuwcljtcbtr6qqagzghutgdmmltsf55rbqhp3m3lgsvmee3uip73qn7lrhq"
+            ]
 vm_cluster_defined_tags: null
 vm_cluster_freeform_tags: null
-is_local_backup_enabled: 'true'
-is_sparse_diskgroup_enabled: 'false'
-license_model: 'BYOL'
-vm_cluster_memory_size_in_gbs: '30'
+is_local_backup_enabled: 'false'
+is_sparse_diskgroup_enabled: 'true'
+license_model: 'BRING_YOUR_OWN_LICENSE'
+vm_cluster_memory_size_in_gbs: '512'
 vm_cluster_time_zone: 'UTC'
 
 
