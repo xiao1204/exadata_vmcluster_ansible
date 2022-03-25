@@ -1,6 +1,6 @@
 # Ansible for Exadata
 
-This ansible project allows for Exadata Cloud@Customer and Exadata Cloud Service set-up. 
+This ansible project allows for Exadata Cloud@Customer and Exadata Cloud Service set-up 
 
 ## Getting Started
 
@@ -9,13 +9,13 @@ This ansible project allows for Exadata Cloud@Customer and Exadata Cloud Service
 1. Provision AWX on an OCI Instance: Follow the steps from https://github.com/oracle-quickstart/oci-ansible-awx.
 
 
-2. Create Organization: Go to **Organizations** under the **Access** section, and then click on the blue **Add** button on top to create a new organization. Fill out the name of the Organization you would like to use for this project. 
+2. Create Organization: Go to **Organizations** under the **Access** section, and then click on the blue **Add** button on top to create a new organization. Fill out the name of the Organization you would like to use for this project.
 
     ![img](./images/organization.png)
 
 
 
-3. Create OCI Credential Type: Go to **Credentials Types** under the **Administration** section, and then click on the blue **Add** button on top to create the OCI Credential Type. 
+3. Create OCI Credential Type: Go to **Credentials Types** under the **Administration** section, and then click on the blue **Add** button on top to create the OCI Credential Type.
 
     Add the following code to the **Input Configuration**.
     ```
@@ -45,7 +45,7 @@ This ansible project allows for Exadata Cloud@Customer and Exadata Cloud Service
     - private_user_key
     ```
 
-    Add the following code to the **Injector Configuration**. 
+    Add the following code to the **Injector Configuration**.
 
     ```
     env:
@@ -71,15 +71,15 @@ This ansible project allows for Exadata Cloud@Customer and Exadata Cloud Service
 
         ![img](./images/ansible_galaxy_cred.png)
 
-    - Github credentials - **Source Control** Credential Type. Enter your github username and then create a Personal Access Token in Github and enter it as your password. Your personal access token will be encrypted for security. 
-    
+    - Github credentials - **Source Control** Credential Type. Enter your github username and then create a Personal Access Token in Github and enter it as your password. Your personal access token will be encrypted for security.
+
         ![img](./images/github_cred.png)
 
-    - OCI credentials - **Custom OCI** Credential Type. Enter all the required information. Although not shown in this screenshot, as with the github access token, your private key will be automatically encrypted as well. 
+    - OCI credentials - **Custom OCI** Credential Type. Enter all the required information. Although not shown in this screenshot, as with the github access token, your private key will be automatically encrypted as well.
 
         ![img](./images/oci_cred.png)
 
-    - SSH Keys - **Machine** Credential Type. Enter any SSH Keys to be used in your environment. 
+    - SSH Keys - **Machine** Credential Type. Enter any SSH Keys to be used in your environment.
 
         ![img](./images/ssh_cred.png)
 
@@ -99,7 +99,7 @@ This ansible project allows for Exadata Cloud@Customer and Exadata Cloud Service
 
     ![img](./images/inventory.png)
 
-    To add an inventory source, select the **Sources** tab from your newly created inventory and then the blue **Add** button. Source the inventory from your project as shown below and be sure to input your oci credential. This project's inventory.oci.yml file contains details for the oci inventory plugin and allows hosts to be discovered dynamically. 
+    To add an inventory source, select the **Sources** tab from your newly created inventory and then the blue **Add** button. Source the inventory from your project as shown below and be sure to input your oci credential. This project's inventory.oci.yml file contains details for the oci inventory plugin and allows hosts to be discovered dynamically.
 
     ![img](./images/inventory_source.png)
 
@@ -112,14 +112,14 @@ This ansible project allows for Exadata Cloud@Customer and Exadata Cloud Service
 ## Using Ansible with AWX
 
 ### Running a Playbook
- 
+
 1. Create a Job Template: To run a playbook, go to **Templates** under the **Resources** section, and then click on the blue **Add** button on top to create a new job. The first playbook you should run is the install_python_sdk playbook to set-up python for the oci-python modules. Fill in the fields as shown below. In this case, we do not have any variables to define at runtime but other playbooks will require certain variables.
 
     ![img](./images/job_template.png)
 
 
 2. Define Variables
-    - vars_list: List of variable fils to be used for that playbook. Workload specfic. Be sure to edit these files to set variables such as workload_tag (used for naming resources) and database parameters. The vars directory has already been included in the code, just have to provide the relative path within that directory (ex: exadata/sample_exacs.yml). 
+    - vars_list: List of variable fils to be used for that playbook. Workload specfic. Be sure to edit these files to set variables such as workload_tag (used for naming resources) and database parameters. The vars directory has already been included in the code, just have to provide the relative path within that directory (ex: exadata/sample_exacs.yml).
     - hostgroup: Host group to run DB operations on. Currently only required for PDB operations (other playbooks are for provisioning so use localhost).
     - additional variables: These variables are only defined at runtime, not stored in a file. Check out the Playbooks below for instructions on which plays require additional variables.
 
@@ -130,10 +130,10 @@ Creating a workflow instead of running an individual job allows you to automate 
 
 ## Ansible Codebase
 
-This codebase contains a set of playbooks that can be used individually or combined into a workflow for ExaCS and ExaCC Set-up. Each playbook references ansible roles (an ansible file structure used to group reusable components). Each ansible role folder contains three subdirectories - tasks, defaults, and meta. 
+This codebase contains a set of playbooks that can be used individually or combined into a workflow for ExaCS and ExaCC Set-up. Each playbook references ansible roles (an ansible file structure used to group reusable components). Each ansible role folder contains three subdirectories - tasks, defaults, and meta.
 
 - Tasks: Contains a main.yml file that will be automatically called if the role is invoked. Also contains reusable standalone tasks.
-- Defaults: Default variable values for the tasks in that role. These variables have the least precedence and will be overrided by any variables defined in the included variable file (vars_file) or in the ansible job template. Many of these variables are set as null as they are optional variables for the oci tasks and it is your choice whether to define them. For required variables, check the comments on the sample vars_list or the oracle.oci ansible documentation. 
+- Defaults: Default variable values for the tasks in that role. These variables have the least precedence and will be overrided by any variables defined in the included variable file (vars_file) or in the ansible job template. Many of these variables are set as null as they are optional variables for the oci tasks and it is your choice whether to define them. For required variables, check the comments on the sample vars_list or the oracle.oci ansible documentation.
 - Meta: Sets collection oracle.oci
 
 
@@ -156,7 +156,7 @@ This codebase contains a set of playbooks that can be used individually or combi
     - vars_list
 
 **exacs_setup.yml**
-- Creates an Exadata Cloud Service environment by spinning up the ExaCS Infrastructure and ExaCS VM Cluster. 
+- Creates an Exadata Cloud Service environment by spinning up the ExaCS Infrastructure and ExaCS VM Cluster.
 - Job Template Variables
     - vars_list
     - ssh_public_keys (for VM Cluster creation)
@@ -194,7 +194,7 @@ This codebase contains a set of playbooks that can be used individually or combi
     - hostgroup
     - oracle_sid
     - pdb_admin_password
-    
+
 
 **pdb_delete.yml**
 - Deletes the pdb. Assumes that the database has already been created.
@@ -212,4 +212,3 @@ Using OCI with Ansible Tower: https://blogs.oracle.com/cloud-infrastructure/post
 OCI Collection for ansible: https://oci-ansible-collection.readthedocs.io/en/stable/collections/oracle/oci/index.html
 
 Connecting Github with AWX: https://murrahjm.github.io/Source-Control-and-the-Tower-Project/
-
