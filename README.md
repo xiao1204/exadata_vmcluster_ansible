@@ -1,6 +1,6 @@
 # Ansible for Exadata
 
-This ansible project allows for Exadata Cloud@Customer and Exadata Cloud Service set-up 
+This ansible project allows for Exadata Cloud@Customer and Exadata Cloud Service set-up..
 
 ## Getting Started
 
