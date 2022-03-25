@@ -10,20 +10,26 @@
 - name: Create ExaCC VM Cluster Network
   include_tasks: exacc_create_vm_cluster_network.yml
   when:
-       - flag1 == 1
+       - action == 'create_vm_cluster_network'
 
 - name: Create ExaCC VM Cluster
   include_tasks: exacc_create_vm_cluster.yml
   when:
-       - flag1 == 2
+       - action == 'create_vm_cluster'
 
 - name: Fetch ExaCC VM Cluster Network
   include_tasks: exacc_vm_cluster_network_discovery.yml
   when:
-       - flag1 == 3 
+       - action == 'fetch_vm_cluster_network' 
 
 - name: Fetch ExaCC VM Cluster 
   include_tasks: exacc_vm_cluster_discovery.yml
   when:
-       - flag1 == 4
+       - action == 'fetch_vm_cluster'
+
+- name: Delete ExaCC VM Cluster
+  include_tasks: exacc_delete_vm_cluster.yml
+  when:
+       - action == 'delete_vm_cluster'
+
      
