@@ -6,7 +6,7 @@
     display_name: '{{ vm_cluster_network_name }}'
     dns: '{{ vm_cluster_network_dns }}'
     exadata_infrastructure_id: '{{ exadata_infrastructure_id }}'
-    freeform_tags: '{{ vm_cluster_network_defined_tags_freeform_tags }}'
+    freeform_tags: '{{ vm_cluster_network_freeform_tags }}'
     #key_by: ['exadata_infrastructure_id', 'display_name']
     ntp: '{{ vm_cluster_network_ntp }}'
     scans:
