@@ -29,7 +29,7 @@ backup_vlan_id: '0-4094'
 # VM CLUSTER REQUIRED VARIABLES
 vm_cluster_name: 'exacc5clu4'
 vm_cluster_cpu_core_count: '12'
-vm_cluster_gi_version: '19.13.0.0'
+vm_cluster_gi_version: '19.0.0.0'
 vm_cluster_ssh_public_keys: [
                 "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDyWp8SIWQkd+E04tzZfRSLJaAvHPSPLHuw+VigSu7OeXa5yy05biTDQOECQwJSNdGShnmWvhPGjHqtmT96tpOii
 Dco50Ir6Jjv+4hDse4H8lrEdQA+/9WlH59NcxAPZ/hGCLH7VVXmop7GAEBnXdSa7e6zXHs8jaAP0mNvebjf9r/eobbxwIpb76i9Kn8vjwVSJzr2H0RJjS7TmhMHtmbhetS/cFKNYq8rR8I
