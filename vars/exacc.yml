@@ -5,26 +5,78 @@ infra_compartment_id: 'ocid...'
 workload_tag: 'tag1'
 
 # VM CLUSTER NETWORK REQUIRED VARIABLES
-vm_cluster_network_name: 'VmClusterNW'
-vm_cluster_network_hostname: 'hostname'
+vm_cluster_network_name: 'ecc5c5net'
+vm_cluster_network_scan_hostname: 'ecc5c5-scan'
 vm_cluster_network_port: '1521'
-scan_ip_1: '10.0.20.20'
-scan_ip_2: '10.1.20.20'
-scan_ip_3: '10.2.20.20'
+scan_ip_1: '10.136.106.148'
+scan_ip_2: '10.136.106.149'
+scan_ip_3: '10.136.106.150'
 
-client_domain_name: 'client'
-client_gateway: '10.0.20.1'
-client_netmask: '255.255.255.0'
-client_node_hostname: 'hostname1'
-client_node_ip: '10.0.20.14'
-client_vlan_id: '0-4095'
+client_domain_name: 'us.osc.oracle.com'
+client_gateway: '10.136.106.129'
+client_netmask: '255.255.255.224'
+#client_node_hostname: 'hostname1'
+#client_node_ip: '10.0.20.14'
+client_vlan_id: '2005'
+client_nodes: [
+                        {
+                            "hostname": "ecc5c5n3",
+                            "ip": "10.136.106.136",
+                            "vip": "10.136.106.137",
+                            "vip_hostname": "ecc5c5n3-vip"
+                        },
+                        {
+                            "hostname": "ecc5c5n4",
+                            "ip": "10.136.106.138",
+                            "vip": "10.136.106.139",
+                            "vip_hostname": "ecc5c5n4-vip"
+                        },
+                        {
+                            "hostname": "ecc5c5n2",
+                            "ip": "10.136.106.134",
+                            "vip": "10.136.106.135",
+                            "vip_hostname": "ecc5c5n2-vip"
+                        },
+                        {
+                            "hostname": "ecc5c5n1",
+                            "ip": "10.136.106.132",
+                            "vip": "10.136.106.133",
+                            "vip_hostname": "ecc5c5n1-vip"
+                        }
+                    ]
 
-backup_domain_name: 'backup'
-backup_gateway: '10.0.20.2'
-backup_netmask: '255.255.255.1'
-backup_node_hostname: 'hostname2'
-backup_node_ip: '10.1.20.14'
-backup_vlan_id: '0-4094'
+backup_domain_name: 'us.osc.oracle.com'
+backup_gateway: '10.136.101.193'
+backup_netmask: '255.255.255.240'
+#backup_node_hostname: 'hostname2'
+#backup_node_ip: '10.1.20.14'
+backup_vlan_id: '2105'
+backup_nodes: [
+                        {
+                            "hostname": "ecc5c5n1-bk",
+                            "ip": "10.136.101.196",
+                            "vip": null,
+                            "vip_hostname": null
+                        },
+                        {
+                            "hostname": "ecc5c5n3-bk",
+                            "ip": "10.136.101.198",
+                            "vip": null,
+                            "vip_hostname": null
+                        },
+                        {
+                            "hostname": "ecc5c5n4-bk",
+                            "ip": "10.136.101.199",
+                            "vip": null,
+                            "vip_hostname": null
+                        },
+                        {
+                            "hostname": "ecc5c5n2-bk",
+                            "ip": "10.136.101.197",
+                            "vip": null,
+                            "vip_hostname": null
+                        }
+                    ]
 
 # VM CLUSTER REQUIRED VARIABLES
 vm_cluster_name: 'exacc5clu4'

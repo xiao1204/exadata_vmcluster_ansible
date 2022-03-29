@@ -1,16 +1,16 @@
 
-- name: 'Create VM Cluster Network {{ workload_tag }}{{ vm_cluster_network_name }}'
+- name: 'Create VM Cluster Network {{ vm_cluster_network_name }}'
   oci_database_vm_cluster_network:
     compartment_id: '{{ compartment_id }}'
     defined_tags: '{{ vm_cluster_network_defined_tags }}'
-    display_name: '{{ workload_tag }}{{ vm_cluster_network_name }}'
+    display_name: '{{ vm_cluster_network_name }}'
     dns: '{{ vm_cluster_network_dns }}'
     exadata_infrastructure_id: '{{ exadata_infrastructure_id }}'
     freeform_tags: '{{ vm_cluster_network_defined_tags_freeform_tags }}'
-    key_by: ['exadata_infrastructure_id', 'display_name']
+    #key_by: ['exadata_infrastructure_id', 'display_name']
     ntp: '{{ vm_cluster_network_ntp }}'
     scans:
-    - hostname: '{{ vm_cluster_network_hostname }}'
+    - hostname: '{{ vm_cluster_network_scan_hostname }}'
       port: '{{ vm_cluster_network_port }}'
       ips: ['{{ scan_ip_1 }}', '{{ scan_ip_2 }}', '{{ scan_ip_3 }}']
     vm_networks:
