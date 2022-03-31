@@ -7,7 +7,7 @@
     dns: '{{ vm_cluster_network_dns }}'
     exadata_infrastructure_id: '{{ exadata_infrastructure_id }}'
     freeform_tags: '{{ vm_cluster_network_freeform_tags }}'
-    #key_by: ['exadata_infrastructure_id', 'display_name']
+    #key_by: ['exadata_infrastructure_id', 'display_name'] 
     ntp: '{{ vm_cluster_network_ntp }}'
     scans:
     - hostname: '{{ vm_cluster_network_scan_hostname }}'
@@ -26,6 +26,7 @@
       network_type: 'BACKUP'
       nodes: '{{ backup_nodes }}'
       vlan_id: '{{ backup_vlan_id }}'
+  register: vm_cluster_network_create_result
 - debug:
     msg: '{{ vm_cluster_network_create_result }}'
 - set_fact:
